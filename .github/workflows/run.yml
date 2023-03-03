@@ -1,0 +1,16 @@
+name: 'build-test'
+on: # rebuild any PRs and main branch changes
+  pull_request:
+
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: "@gradio-app/github/actions/deploy-space"
+        with: 
+          hf_token: ${secrets.hf_token}
+          user_name: 'pngwn'
+          space_name: 'space-test-one'
+          space_type: 'static'
+          path: 'path'
