@@ -2,6 +2,9 @@ name: 'build-test'
 on: # rebuild any PRs and main branch changes
   pull_request:
 
+permissions:
+  pull-requests: write
+
 jobs:
   build: 
     runs-on: ubuntu-latest
@@ -14,3 +17,4 @@ jobs:
           space_name: 'space-test-one'
           space_type: 'static'
           path: 'path'
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
