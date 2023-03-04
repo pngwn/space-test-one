@@ -14,3 +14,4 @@ jobs:
           space_name: 'space-test-gradio'
           space_type: 'gradio'
           path: 'gradio'
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
