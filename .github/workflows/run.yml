@@ -11,6 +11,6 @@ jobs:
         with: 
           hf_token: ${secrets.hf_token}
           user_name: 'pngwn'
-          space_name: 'space-test-one'
-          space_type: 'static'
-          path: 'path'
+          space_name: 'space-test-gradio'
+          space_type: 'gradio'
+          path: 'gradio'
