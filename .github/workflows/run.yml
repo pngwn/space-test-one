@@ -2,15 +2,19 @@ name: 'build-test'
 on: # rebuild any PRs and main branch changes
   pull_request:
 
+permissions:
+  pull-requests: write
+
 jobs:
   build: 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: "@gradio-app/github/actions/deploy-space"
+      - uses: gradio-app/github/actions/deploy-space@main
         with: 
-          hf_token: ${secrets.hf_token}
+          hf_token: ${{ secrets.hf_token }}
           user_name: 'pngwn'
           space_name: 'space-test-one'
           space_type: 'static'
           path: 'path'
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
