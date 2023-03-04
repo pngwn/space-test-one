@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: "@gradio-app/github/actions/deploy-space"
+      - uses: gradio-app/github/actions/deploy-space@main
         with: 
-          hf_token: ${secrets.hf_token}
+          hf_token: ${{ secrets.hf_token }}
           user_name: 'pngwn'
           space_name: 'space-test-gradio'
           space_type: 'gradio'
